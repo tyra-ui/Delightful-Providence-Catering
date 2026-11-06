@@ -5,23 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Delightful Providence | Luxury Catering & Event Services</title>
+    <title>Delightful Providence | Wedding &amp; Event Catering in Nairobi</title>
 
     <meta name="description"
-        content="Discover exceptional catering by Delightful Providence. We create memorable dining experiences for weddings, corporate events, conferences and private celebrations.">
+        content="Delightful Providence offers elegant wedding, corporate, conference and private event catering in Nairobi, Kenya. Enjoy beautifully prepared menus and exceptional service.">
 
     <meta name="author" content="Delightful Providence">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://tyra-ui.github.io/Delightful-Providence-Catering/">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- Social Media Preview -->
     <meta property="og:title"
-        content="Delightful Providence | Exceptional Catering">
+        content="Delightful Providence | Wedding &amp; Event Catering in Nairobi">
 
     <meta property="og:description"
-        content="Exceptional food. Beautiful occasions. Unforgettable experiences.">
+        content="Elegant wedding, corporate and event catering in Nairobi, Kenya. Beautifully prepared menus and exceptional service.">
 
     <meta property="og:type" content="website">
+
+    <meta property="og:url"
+        content="https://tyra-ui.github.io/Delightful-Providence-Catering/">
+
+    <meta name="twitter:card" content="summary">
 
     <!-- Google Fonts -->
     <!-- Keep your existing Google Fonts links here -->
@@ -76,8 +84,8 @@
             </span>
 
             <h1>
-                Creating Memorable
-                <span>Moments Through Food.</span>
+                Luxury Catering for
+                <span>Weddings, Corporate Events &amp; Celebrations in Nairobi.</span>
             </h1>
 
             <p>
@@ -132,17 +140,7 @@
             </h2>
 
             <p>
-                We believe that exceptional food has the power
-                to bring people together. At Delightful Providence,
-                we create memorable catering experiences tailored
-                to every occasion.
-            </p>
-
-            <p>
-                Whether it's a wedding, corporate gathering,
-                conference or private celebration, we bring
-                passion, creativity and attention to detail
-                to every event.
+                Delightful Providence provides exceptional catering services in Nairobi, Kenya, for weddings, corporate events, conferences and private celebrations. We combine beautifully prepared menus, elegant food presentation and thoughtful service to create memorable experiences for every occasion.
             </p>
 
             <a href="#services" class="text-link">
@@ -167,22 +165,22 @@
         <div class="presentation-gallery">
 
             <img src="images/presentation-1.jpg"
-                 >
+                 alt="Elegant catering food presentation in Nairobi">
 
             <img src="images/presentation-2.jpg"
-                >
+                 alt="Beautifully arranged dishes for event catering">
 
             <img src="images/presentation-3.jpg"
-                >
+                 alt="Professional catering presentation for special occasions">
 
             <img src="images/presentation-4.jpg"
-               >
+                 alt="Delightful Providence event catering">
 
             <img src="images/presentation-5.jpg"
-                >
+                 alt="Elegant food display for weddings and corporate events">
 
             <img src="images/presentation-6.jpg"
-               >
+                 alt="Beautifully prepared catering dishes">
 
         </div>
 
@@ -335,44 +333,43 @@
     </section>
 
 
-    <!-- GALLERY -->
-    <section class="gallery-section" id="gallery">
+<!-- GALLERY: existing approved images only -->
+<section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
     <div class="gallery-heading">
         <span class="section-label">A TASTE OF ELEGANCE</span>
-        <h2>Moments We've <em>Made Special</em></h2>
-        <p>A glimpse into the beautiful occasions we've had the pleasure of catering.</p>
+        <h2 id="gallery-title">Moments We've <em>Made Special</em></h2>
+        <p>Browse a selection of catering presentations. Select a photo to view it larger.</p>
     </div>
 
-    <div class="gallery-grid">
-        <div class="gallery-item">
-            <img src="images/gallery-1.jpg" alt="Elegant catered dining setup">
-        </div>
+    <div class="gallery-grid" aria-label="Catering photo gallery">
+        <button class="gallery-item" type="button" aria-label="View larger image: Elegant catered dining setup">
+            <img src="images/gallery-1.jpg" alt="Elegant catered dining setup" width="3600" height="2403" decoding="async">
+        </button>
 
-        <div class="gallery-item">
-            <img src="images/gallery-2.jpg" alt="Beautifully presented catering dishes">
-        </div>
+        <button class="gallery-item" type="button" aria-label="View larger image: Beautifully presented catering dishes">
+            <img src="images/gallery-2.jpg" alt="Beautifully presented catering dishes" width="3600" height="2403" loading="lazy" decoding="async">
+        </button>
 
-        <div class="gallery-item">
-            <img src="images/gallery-3.jpg" alt="Special event catering">
-        </div>
+        <button class="gallery-item" type="button" aria-label="View larger image: Special event catering">
+            <img src="images/gallery-3.jpg" alt="Special event catering" width="3600" height="2403" loading="lazy" decoding="async">
+        </button>
 
-        <div class="gallery-item">
-            <img src="images/gallery-4.jpg" alt="Elegant food presentation">
-        </div>
+        <button class="gallery-item" type="button" aria-label="View larger image: Elegant food presentation">
+            <img src="images/gallery-4.jpg" alt="Elegant food presentation" width="2403" height="3600" loading="lazy" decoding="async">
+        </button>
     </div>
 </section>
 
-<div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" id="lightboxClose"
-        aria-label="Close image">&times;</button>
-    <button class="lightbox-prev" id="lightboxPrev"
-        aria-label="Previous image">&#10094;</button>
-    <img src="" alt="Expanded gallery image" id="lightboxImage">
-    <button class="lightbox-next" id="lightboxNext"
-        aria-label="Next image">&#10095;</button>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption" aria-hidden="true" hidden>
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close enlarged image">&times;</button>
+    <button class="lightbox-prev" id="lightboxPrev" type="button" aria-label="Show previous image">&#10094;</button>
+    <figure class="lightbox-figure">
+        <img src="" alt="" id="lightboxImage">
+        <figcaption id="lightboxCaption" aria-live="polite"></figcaption>
+    </figure>
+    <button class="lightbox-next" id="lightboxNext" type="button" aria-label="Show next image">&#10095;</button>
+    <p class="lightbox-help">Use Left and Right Arrow keys to browse. Press Escape to close.</p>
 </div>
-
-    </section>
 
     <section class="testimonials-section" id="testimonials">
     <div class="testimonials-heading">
