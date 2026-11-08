@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://delightfulprovidence.pages.dev/sitemap.xml
+Sitemap: https://tyra-ui.github.io/Delightful-Providence-Catering/sitemap.xml
