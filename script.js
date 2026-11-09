@@ -28,6 +28,7 @@ if (menuToggle && navLinks) {
 const galleryImages = document.querySelectorAll(".gallery-item img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCaption = document.getElementById("lightboxCaption");
 const closeLightbox = document.getElementById("lightboxClose");
 const previousImage = document.getElementById("lightboxPrev");
 const nextImage = document.getElementById("lightboxNext");
@@ -42,6 +43,7 @@ function showImage(index) {
 
     lightboxImage.src = galleryImages[currentImageIndex].src;
     lightboxImage.alt = galleryImages[currentImageIndex].alt;
+    if (lightboxCaption) lightboxCaption.textContent = lightboxImage.alt;
 }
 
 function openLightbox(index) {
