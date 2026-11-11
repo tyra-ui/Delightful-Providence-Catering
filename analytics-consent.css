@@ -59,6 +59,10 @@
     margin: 1.5rem auto;
 }
 
+.analytics-settings-dialog[hidden] {
+    display: none;
+}
+
 .analytics-settings-dialog {
     inset: 0;
     display: grid;
