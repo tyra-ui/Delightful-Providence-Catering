@@ -31,6 +31,7 @@ const previousImage = document.getElementById("lightboxPrev");
 const nextImage = document.getElementById("lightboxNext");
 
 let currentImageIndex = 0;
+let galleryTrigger = null;
 
 function showImage(index) {
     if (!galleryImages.length || !lightboxImage) return;
@@ -42,17 +43,22 @@ function showImage(index) {
 
 function openLightbox(index) {
     if (!lightbox) return;
+    galleryTrigger = document.activeElement;
     showImage(index);
+    lightbox.hidden = false;
     lightbox.classList.add("active");
     lightbox.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+    if (closeLightbox) closeLightbox.focus();
 }
 
 function closeGallery() {
     if (!lightbox) return;
     lightbox.classList.remove("active");
     lightbox.setAttribute("aria-hidden", "true");
+    lightbox.hidden = true;
     document.body.style.overflow = "";
+    if (galleryTrigger) galleryTrigger.focus();
 }
 
 galleryItems.forEach((item, index) => {
@@ -74,6 +80,15 @@ document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeGallery();
     if (event.key === "ArrowRight") showImage(currentImageIndex + 1);
     if (event.key === "ArrowLeft") showImage(currentImageIndex - 1);
+    if (event.key === "Tab" && closeLightbox && nextImage) {
+        if (event.shiftKey && document.activeElement === closeLightbox) {
+            event.preventDefault();
+            nextImage.focus();
+        } else if (!event.shiftKey && document.activeElement === nextImage) {
+            event.preventDefault();
+            closeLightbox.focus();
+        }
+    }
 });
 
 /* WHATSAPP BOOKING FORM */
