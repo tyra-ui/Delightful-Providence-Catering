@@ -107,6 +107,15 @@ function updateEarliestEventDate() {
 if (bookingForm) {
     updateEarliestEventDate();
     if (eventDate) eventDate.addEventListener("focus", updateEarliestEventDate);
+    const bookingFields = document.getElementById("bookingFields");
+    const bookingFallback = document.getElementById("bookingFallback");
+    const phone = document.getElementById("phone");
+    function validatePhone() {
+        if (!phone) return;
+        const digits = phone.value.replace(/\D/g, "");
+        phone.setCustomValidity(phone.value && (!/^[+\d\s().-]+$/.test(phone.value) || digits.length < 7 || digits.length > 15) ? "Please enter a valid phone number with 7 to 15 digits." : "");
+    }
+    if (phone) phone.addEventListener("input", validatePhone);
     bookingForm.addEventListener("submit", function(event) {
         event.preventDefault();
         updateEarliestEventDate();
@@ -136,4 +145,8 @@ ${enquiry.message}`;
         const whatsappURL = "https://wa.me/254748184120?text=" + encodeURIComponent(whatsappMessage);
         window.open(whatsappURL, "_blank");
     });
+    if (bookingFields) bookingFields.disabled = false;
+    if (bookingFallback) bookingFallback.hidden = true;
+    const formStatus = document.getElementById("formStatus");
+    if (formStatus) formStatus.hidden = false;
 }

@@ -59,7 +59,7 @@ alt="Delightful Providence Catering Logo">
 <a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
 </nav>
-<a href="#contact" class="nav-button">
+<a href="#booking" class="nav-button">
 Book An Event
 </a>
 <button class="menu-toggle" id="menuToggle"
@@ -86,7 +86,7 @@ For weddings, conferences, corporate events, private parties and outdoor occasio
 <a href="#services" class="btn btn-primary">
 Explore Our Services
 </a>
-<a href="#contact" class="btn btn-outline">
+<a href="#booking" class="btn btn-outline">
 Plan Your Event
 </a>
 </div>
@@ -122,7 +122,7 @@ Start with the details that shape your occasion: the event type, date, estimated
 Whether you are planning a wedding, corporate gathering, conference, private party or outdoor event, explore the gallery for a closer look at our catering presentation, then send an enquiry when you are ready.
 </p>
 <a href="#services" class="text-link">
-Discover Our Story →
+Explore Our Services →
 </a>
 </div>
 </div>
@@ -370,7 +370,9 @@ Get In Touch
 <h2>Plan Your <em>Perfect Event</em></h2>
 <p>Complete the enquiry form with your event type, date, estimated guest count, location and preferences. You can also contact Delightful Providence on WhatsApp.</p>
 </div>
+<p id="bookingFallback" class="form-note">The enquiry form is unavailable. Please <a href="https://wa.me/254748184120">contact us on WhatsApp</a> instead.</p>
 <form class="booking-form" id="bookingForm">
+<fieldset id="bookingFields" disabled style="border:0;padding:0;margin:0;min-width:0">
 <div class="form-row">
 <div class="form-group">
 <label for="fullName">Full Name</label>
@@ -426,9 +428,10 @@ placeholder="Share any menu preferences, presentation ideas or other event detai
 <button type="submit" class="btn btn-primary">
 Continue to WhatsApp
 </button>
-<p class="form-note" id="formStatus" role="status" aria-live="polite">
+<p class="form-note" id="formStatus" role="status" aria-live="polite" hidden>
 Please include your event type, date, guest count and location so we can understand your enquiry. WhatsApp will open with your enquiry. Please send the message there.
 </p>
+</fieldset>
 </form>
 </div>
 </section>
