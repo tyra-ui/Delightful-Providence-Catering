@@ -93,10 +93,24 @@ document.addEventListener("keydown", (event) => {
 
 /* WHATSAPP BOOKING FORM */
 const bookingForm = document.getElementById("bookingForm");
+const eventDate = document.getElementById("eventDate");
+
+function updateEarliestEventDate() {
+    if (!eventDate) return;
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+    eventDate.min = `${year}-${month}-${day}`;
+}
 
 if (bookingForm) {
+    updateEarliestEventDate();
+    if (eventDate) eventDate.addEventListener("focus", updateEarliestEventDate);
     bookingForm.addEventListener("submit", function(event) {
         event.preventDefault();
+        updateEarliestEventDate();
+        if (eventDate && !eventDate.reportValidity()) return;
         const enquiry = {
             name: document.getElementById("fullName")?.value || "",
             email: document.getElementById("email")?.value || "",
