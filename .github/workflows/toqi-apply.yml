@@ -1,0 +1,22 @@
+name: Prepare reviewed changes
+on:
+  push:
+    branches: [toqi-enquiry-safety-20261123]
+permissions:
+  contents: write
+jobs:
+  apply:
+    if: github.event.head_commit.message == 'Stage reviewed website fix'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply tested files
+        run: |
+          base64 -d .toqi-staging/index.html.gz.b64 | gzip -d > index.html
+          base64 -d .toqi-staging/script.js.gz.b64 | gzip -d > script.js
+          rm -rf .toqi-staging .github/workflows/toqi-apply.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html script.js .toqi-staging .github/workflows/toqi-apply.yml
+          git commit -m 'Fix enquiry fallback and links'
+          git push
